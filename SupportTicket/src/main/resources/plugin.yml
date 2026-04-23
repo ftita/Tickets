@@ -1,0 +1,35 @@
+name: SupportTicket
+version: '${project.version}'
+main: dev.support.ticket.SupportTicketPlugin
+api-version: '1.21'
+author: SupportDev
+description: Sistema completo di ticket di supporto con GUI, claim, priorità e Discord webhook.
+softdepend: [PlaceholderAPI]
+
+commands:
+  ticket:
+    description: Comando principale per i ticket
+    usage: /ticket <create|close|list|claim|info|reply|gui>
+    aliases: [tk, support]
+  tickets:
+    description: Apre la GUI dei ticket (staff)
+    usage: /tickets
+    permission: supportticket.staff
+
+permissions:
+  supportticket.*:
+    description: Tutti i permessi del plugin
+    default: op
+    children:
+      supportticket.use: true
+      supportticket.staff: true
+      supportticket.admin: true
+  supportticket.use:
+    description: Permette di creare e gestire i propri ticket
+    default: true
+  supportticket.staff:
+    description: Permette di gestire i ticket come staff (claim, close, reply, list)
+    default: op
+  supportticket.admin:
+    description: Permette di ricaricare la config e cancellare ticket
+    default: op

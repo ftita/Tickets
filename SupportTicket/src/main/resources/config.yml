@@ -1,0 +1,72 @@
+# ============================================
+# SupportTicket - Configurazione
+# ============================================
+
+# Impostazioni generali
+settings:
+  # Numero massimo di ticket aperti per giocatore
+  max-open-tickets-per-player: 3
+  # Cooldown in secondi tra la creazione di due ticket
+  create-cooldown-seconds: 60
+  # Notifica in chat allo staff online quando viene creato un ticket
+  notify-staff-on-create: true
+  # Suona un suono quando arriva un nuovo ticket allo staff
+  play-sound-on-new-ticket: true
+  sound-name: "BLOCK_NOTE_BLOCK_PLING"
+
+# Database (SQLite locale)
+database:
+  # Nome file database nella cartella del plugin
+  file: "tickets.db"
+  # Dimensione pool connessioni
+  pool-size: 5
+
+# Discord Webhook per notifiche
+discord:
+  enabled: false
+  # Incolla qui l'URL del webhook Discord
+  webhook-url: "https://discord.com/api/webhooks/XXXX/YYYY"
+  # Username mostrato su Discord
+  username: "Support Tickets"
+  # Eventi da notificare
+  notify:
+    on-create: true
+    on-claim: true
+    on-close: true
+    on-reply: false
+  # Colori embed per priorità (formato decimale)
+  colors:
+    LOW: 3447003       # blu
+    NORMAL: 3066993    # verde
+    HIGH: 15844367     # arancio
+    URGENT: 15158332   # rosso
+
+# GUI
+gui:
+  staff-title: "&8» &cGestione Ticket"
+  player-title: "&8» &aI tuoi Ticket"
+  rows: 6
+
+# Messaggi (supportano codici colore &)
+messages:
+  prefix: "&8[&cSupport&8] &7"
+  no-permission: "&cNon hai il permesso per eseguire questo comando."
+  player-only: "&cQuesto comando può essere eseguito solo da un giocatore."
+  ticket-created: "&aTicket &e#%id% &acreato con successo! Lo staff ti risponderà al più presto."
+  ticket-closed: "&aTicket &e#%id% &achiuso."
+  ticket-claimed: "&aHai preso in carico il ticket &e#%id%&a."
+  ticket-not-found: "&cTicket &e#%id% &cnon trovato."
+  ticket-not-yours: "&cQuesto ticket non è tuo."
+  no-open-tickets: "&7Non hai nessun ticket aperto."
+  max-tickets-reached: "&cHai raggiunto il limite massimo di ticket aperti (&e%max%&c)."
+  cooldown-active: "&cDevi aspettare ancora &e%seconds% &csecondi prima di creare un altro ticket."
+  usage-create: "&cUso: /ticket create <priorità> <messaggio>"
+  usage-reply: "&cUso: /ticket reply <id> <messaggio>"
+  usage-close: "&cUso: /ticket close <id>"
+  usage-claim: "&cUso: /ticket claim <id>"
+  usage-info: "&cUso: /ticket info <id>"
+  invalid-priority: "&cPriorità non valida. Usa: &eLOW, NORMAL, HIGH, URGENT"
+  new-ticket-staff: "&e⚠ &6Nuovo ticket &e#%id% &6da &b%player% &6[&c%priority%&6]: &f%message%"
+  reply-from-staff: "&a[STAFF] %staff%&7: &f%message%"
+  reply-from-player: "&b[PLAYER] %player%&7: &f%message%"
+  reload-success: "&aConfigurazione ricaricata con successo."
