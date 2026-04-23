@@ -3,7 +3,7 @@
 Plugin Minecraft per Paper 1.21+ che implementa un sistema completo di ticket di supporto.
 
 ## Funzionalità
-
+y
 - **Creazione ticket** con 4 priorità (LOW / NORMAL / HIGH / URGENT)
 - **Sistema claim**: lo staff prende in carico un ticket
 - **Risposte bidirezionali** tra giocatore e staff
